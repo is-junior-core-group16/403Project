@@ -205,6 +205,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Requests.cs" />
+    <Compile Include="Models\Software.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -268,6 +269,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\User\Submit.cshtml" />
+    <Content Include="Views\User\SoftwareInput.cshtml" />
+    <Content Include="Views\User\Thanks.cshtml" />
+    <Content Include="Views\User\ShowList.cshtml" />
+    <Content Include="Views\User\Accepted.cshtml" />
+    <Content Include="Views\User\Rejected.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

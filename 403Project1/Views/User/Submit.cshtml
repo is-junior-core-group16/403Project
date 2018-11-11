@@ -7,10 +7,10 @@
 <h2>Submit</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
     <h4>Requests</h4>
     <hr />
@@ -34,27 +34,20 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Software, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Software, new [] {
-            new SelectListItem()
-            {Text="KiTTY" },
-            new SelectListItem()
-            {Text="BlueGriffon"},
-            new SelectListItem()
-            {Text="SpaceSniffer" },
-            new SelectListItem()
-            {Text="AxCrypt" },
-            new SelectListItem()
-            {Text="Other" } }, "Choose an Option")
-            @Html.ValidationMessageFor(model => model.Software, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <!--This doesn't really work. It's going to cause problems and is still a work in progress-->
-    <div class="form-group">
-        <p>Other:</p>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Software, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.managerName, "", new { @class = "text-danger" })
+            @{
+                    List<SelectListItem>
+                        items = new List<SelectListItem>
+                            ();
+                    items.Add(new SelectListItem() { Text = "KiTTY" });
+                    items.Add(new SelectListItem() { Text = "BlueGriffon" });
+                    items.Add(new SelectListItem() { Text = "SpaceSniffer" });
+                    items.Add(new SelectListItem() { Text = "AxCrypt" });
+                    items.Add(new SelectListItem() { Text = "Other", Value = null });
+                }
+                    @Html.DropDownListFor(model => model.Software, items, "Choose an Option")
+                    @Html.ValidationMessageFor(model => model.Software, "", new { @class = "text-danger" })
+        <p>If you select other, you will be redirected to another page where you may enter the desired software.</p>
+        
         </div>
     </div>
 

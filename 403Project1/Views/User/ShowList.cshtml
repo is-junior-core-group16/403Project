@@ -1,0 +1,43 @@
+﻿@model IEnumerable<_403Project1.Models.Requests>
+
+@{
+    ViewBag.Title = "ShowList";
+}
+
+<h2>Your Requests</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Submit")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.managerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Software)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.userName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.managerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Software)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.RequestID })
+        </td>
+    </tr>
+}
+
+</table>
