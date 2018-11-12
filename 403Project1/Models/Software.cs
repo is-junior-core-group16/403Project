@@ -12,15 +12,13 @@ namespace _403Project1.Models
         [Key]
         public int ChangeID { get; set; }
 
-        [Required]
-        public string Name { get; set; }
-
         private bool blackListed;
 
         public bool BlackListed
         {
             get { return blackListed; }
             set {
+
                 blackListed = value;
                 whiteListed = !value;
             }
@@ -38,5 +36,9 @@ namespace _403Project1.Models
             }
         }
 
+        public Software(string name, string type)
+        {
+
+        }
     }
 }
