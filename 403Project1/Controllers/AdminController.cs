@@ -12,7 +12,7 @@ namespace _403Project1.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View("Index.cshtml");
         }
 
         //admin view to simply see the requests, use page that Kyle created (question for Kyle: how do I use list to show all requests?)
@@ -24,14 +24,14 @@ namespace _403Project1.Controllers
         //show the black list (hard coded, add to database for later)
         public ActionResult ShowBlackList()
         {
-            return View();
+            return View("ShowBlackList.cshtml");
         }
 
 
         //show the white list (hard coded, add to database for later)
         public ActionResult ShowWhiteList()
         {
-            return View();
+            return View("ShowWhiteList.cshtml");
         }
     }
 }
