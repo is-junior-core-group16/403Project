@@ -15,10 +15,10 @@ namespace _403Project1.Controllers
             return View();
         }
 
-        //admin view to simply see the requests, use page that Kyle created
+        //admin view to simply see the requests, use page that Kyle created (question for Kyle: how do I use list to show all requests?)
         public ActionResult ShowAllRequests()
         {
-            return View(ShowList);
+            return View("ShowList.cshtml");
         }
 
         //show the black list (hard coded, add to database for later)
