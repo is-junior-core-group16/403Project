@@ -32,7 +32,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Software, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.SoftwareName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @{
                     List<SelectListItem>
@@ -44,8 +44,8 @@
                     items.Add(new SelectListItem() { Text = "AxCrypt" });
                     items.Add(new SelectListItem() { Text = "Other", Value = null });
                 }
-                    @Html.DropDownListFor(model => model.Software, items, "Choose an Option")
-                    @Html.ValidationMessageFor(model => model.Software, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(model => model.SoftwareName, items, "Choose an Option")
+                    @Html.ValidationMessageFor(model => model.SoftwareName, "", new { @class = "text-danger" })
         <p>If you select other, you will be redirected to another page where you may enter the desired software.</p>
         
         </div>

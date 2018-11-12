@@ -31,11 +31,11 @@
     <h4>What would you like to do?</h4>
 
 
-    <input class ="button" type="submit" value="Show me user requests" onclick="location.href='@Url.Action("ShowAllRequests", "Admin")'" />
+    <input class ="button" type="submit" value="Show me user requests" onclick="location.href='@Url.Action("ShowList", "Admin")'" />
     <br />
-    <input class="button" type="submit" value="Show me the white list" onclick="location.href='@Url.Action("ActionName", "Admin")'" />
+    <input class="button" type="submit" value="Show me the white list" onclick="location.href='@Url.Action("ShowBlackList", "Admin")'" />
     <br />
-    <input class="button" type="submit" value="Show me the black list" onclick="location.href='@Url.Action("ActionName", "Admin")'" />
+    <input class="button" type="submit" value="Show me the black list" onclick="location.href='@Url.Action("ShowWhiteList", "Admin")'" />
 
 </body>
 </html>

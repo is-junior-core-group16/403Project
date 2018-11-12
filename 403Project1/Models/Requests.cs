@@ -22,7 +22,7 @@ namespace _403Project1.Models
 
         [Required(ErrorMessage = "Please enter the software you'd like to request")]
         [Display(Name = "Software Requested")]
-        public string Software { get; set; }
+        public string SoftwareName { get; set; }
 
     }
 }

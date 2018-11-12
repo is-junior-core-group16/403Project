@@ -6,13 +6,37 @@ using System.Web;
 
 namespace _403Project1.Models
 {
-    public class Software
+    public class Software : Requests
     {
 
         [Key]
         public int ChangeID { get; set; }
 
         [Required]
-        public string Change { get; set; }
+        public string Name { get; set; }
+
+        private bool blackListed;
+
+        public bool BlackListed
+        {
+            get { return blackListed; }
+            set {
+                blackListed = value;
+                whiteListed = !value;
+            }
+        }
+
+
+        private bool whiteListed;
+
+        public bool WhiteListed
+        {
+            get { return whiteListed; }
+            set {
+                whiteListed = value;
+                blackListed = !value;
+            }
+        }
+
     }
 }

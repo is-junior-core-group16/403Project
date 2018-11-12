@@ -10,26 +10,26 @@ namespace _403Project1.Controllers
     public class UserController : Controller
     {
         public static List<Requests> requests = new List<Requests>();
-        public static Requests myreq = new Requests();
         public static List<String> Whitelist = new List<String>();
         public static List<String> Blacklist = new List<String>();
 
         // GET: User
+        [Authorize]
         public ActionResult ShowList()
         {
             return View(requests);
         }
-
+        [Authorize]
         public ActionResult Submit()
         {
             return View();
         }
-
+        [Authorize]
         public ActionResult SoftwareInput(Requests request)
         {
 
 
-            request.Software = null;
+            request.SoftwareName = null;
             return View("SoftwareInput");
         }
 
@@ -40,7 +40,7 @@ namespace _403Project1.Controllers
         public ActionResult Submit(Requests request)
         {
             
-            if (request.Software == "Other")
+            if (request.SoftwareName == "Other")
                 {
                 requests.Add(request);
                 return View("SoftwareInput");
@@ -57,7 +57,7 @@ namespace _403Project1.Controllers
                     requests.Add(request);
                 }
 
-            if(ModelState.IsValid || (requests[requests.Count - 1].managerName != null && requests[requests.Count - 1].userName != null && requests[requests.Count - 1].Software != null))
+            if(ModelState.IsValid || (requests[requests.Count - 1].managerName != null && requests[requests.Count - 1].userName != null && requests[requests.Count - 1].SoftwareName != null))
                 {
                 if (Whitelist.Count == 0)
                 {
@@ -73,7 +73,7 @@ namespace _403Project1.Controllers
 
                 foreach (string item in Whitelist)
                 {
-                    if (item.Contains(requests[requests.Count - 1].Software))
+                    if (item.Contains(requests[requests.Count - 1].SoftwareName))
                     {
                         requests.RemoveAt(requests.Count - 1);
                         return View("Accepted");
@@ -82,7 +82,7 @@ namespace _403Project1.Controllers
 
                 foreach(string item in Blacklist)
                 {
-                    if (item.Contains(requests[requests.Count - 1].Software))
+                    if (item.Contains(requests[requests.Count - 1].SoftwareName))
                     {
                         requests.RemoveAt(requests.Count - 1);
                         return View("Rejected");
