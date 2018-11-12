@@ -49,6 +49,7 @@ namespace _403Project1.Controllers
                 {
                 request.userName = requests[requests.Count - 1].userName;
                 request.managerName = requests[requests.Count - 1].managerName;
+                request.softwareType = requests[requests.Count - 1].softwareType;
                 requests.RemoveAt(requests.Count - 1);
                 requests.Add(request);
                 }

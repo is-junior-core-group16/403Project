@@ -23,6 +23,11 @@ namespace _403Project1.Models
         [Required(ErrorMessage = "Please enter the software you'd like to request")]
         [Display(Name = "Software Requested")]
         public string SoftwareName { get; set; }
+        //Sorry the syntax is inconsistent..
+
+        [Required(ErrorMessage ="Please enter the software Type")]
+        [Display(Name = "Software Type")]
+        public string softwareType { get; set; }
 
     }
 }
