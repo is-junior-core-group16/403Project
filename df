@@ -1,0 +1,29 @@
+[33mcommit fc1604ca8e63881e6c0bd3ad4ce2734f947b1327[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Haley <dunlop.haley95@gmail.com>
+Date:   Sun Nov 11 18:27:00 2018 -0700
+
+    succesful add of admin controller
+
+[33mcommit 702f1c89e691a9911bc7de70d5eb4d1ba484641d[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Kyle <kylebharrison16@gmail.com>
+Date:   Sat Nov 10 23:08:13 2018 -0700
+
+    Created the User side, still need to add delete function
+
+[33mcommit a877ef7c3288fcff9b936c2abaac5b4317c1694b[m
+Author: Kyle <kylebharrison16@gmail.com>
+Date:   Fri Nov 9 16:23:10 2018 -0700
+
+    Added a User controller, Requests Model, and a createRequests view
+
+[33mcommit e6994cb0ae0ccec01ff9342ea18cee6847bfeccc[m
+Author: Matthieu <matthieumiser94@gmail.com>
+Date:   Fri Nov 9 10:57:22 2018 -0700
+
+    Add project files.
+
+[33mcommit 58d833c3ec365133d6bd1044a58435781b2b32d5[m
+Author: Matthieu <matthieumiser94@gmail.com>
+Date:   Fri Nov 9 10:57:17 2018 -0700
+
+    Add .gitignore and .gitattributes.
