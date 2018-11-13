@@ -16,17 +16,17 @@ namespace _403Project1.Controllers
         public static Requests edit = new Requests();
 
         // GET: User
-        [Authorize]
+        //[Authorize]
         public ActionResult ShowList()
         {
             return View(requests);
         }
-        [Authorize]
+        //[Authorize]
         public ActionResult Submit()
         {
             return View();
         }
-        [Authorize]
+        //[Authorize]
         public ActionResult SoftwareInput(Requests request)
         {
 
@@ -35,14 +35,14 @@ namespace _403Project1.Controllers
             return View("SoftwareInput");
         }
 
-        [Authorize]
+        //[Authorize]
         public ActionResult Delete(int id)
         {
             requests.RemoveAll(item => item.RequestID == id);
             return View("ShowList", requests);
         }
        
-        [Authorize]
+        //[Authorize]
         public ActionResult Update(int id)
         {
             edit = requests.Find(item => item.RequestID == id);

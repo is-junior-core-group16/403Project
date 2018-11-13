@@ -15,27 +15,27 @@ namespace _403Project1.Controllers
         public static List<String> Blacklist = new List<String>();
 
         // GET: Admin
-        [Authorize]
+        //[Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
         //admin view to simply see the requests, use page that Kyle created (question for Kyle: how do I use list to show all requests?)
-        [Authorize]
+        //[Authorize]
         public ActionResult ShowList()
         {
             return View();
         }
 
         //show the black list (hard coded, add to database for later)
-        [Authorize]
+        //[Authorize]
         public ActionResult ShowBlackList()
         {
             return View();
         }
 
-        [Authorize]
+        //[Authorize]
         //show the white list (hard coded, add to database for later)
         public ActionResult ShowWhiteList()
         {
