@@ -20,7 +20,6 @@ namespace _403Project1.Controllers
             return View();
         }
 
-        [HttpPost]
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact us";
