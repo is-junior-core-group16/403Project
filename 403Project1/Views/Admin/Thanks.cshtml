@@ -1,0 +1,10 @@
+﻿@model _403Project1.Models.Requests
+
+@{
+    ViewBag.Title = "Thanks";
+}
+
+<h2>@Model.userName, Thanks for your request. We will get back to you shortly.</h2>
+<p>@Html.ActionLink("Click Here", "Index") to add another request.</p>
+<p>@Html.ActionLink("Click Here", "DisplayRequests") to see a list of your requests</p>
+

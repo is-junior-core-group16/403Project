@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Landing Page</title>
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome Admin!</h2>
+    <br />
+    <br />
+    <h4>What would you like to do?</h4>
+
+
+    <input class="button" type="submit" value="Show me user requests" onclick="location.href='@Url.Action("DisplayRequests", "Admin")'" />
+    <br />
+    <input class="button" type="submit" value="Show me the white list" onclick="location.href='@Url.Action("ShowWhiteList", "Admin")'" />
+    <br />
+    <input class="button" type="submit" value="Show me the black list" onclick="location.href='@Url.Action("ShowBlackList", "Admin")'" />
+
+</body>
+</html>
+
+
+
+
+
