@@ -25,7 +25,7 @@ namespace _403Project1.Controllers
         {
             ViewBag.Message = "Contact us";
 
-            return View();
+            return View("Contact");
         }
     }
 }
