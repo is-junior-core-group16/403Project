@@ -1,0 +1,56 @@
+﻿@model _403Project1.Models.Requests
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Requests</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.managerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.managerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoftwareName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoftwareName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.softwareType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.softwareType)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

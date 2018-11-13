@@ -18,7 +18,10 @@
             @Html.DisplayNameFor(model => model.managerName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Software)
+            @Html.DisplayNameFor(model => model.SoftwareName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.softwareType)
         </th>
         <th></th>
     </tr>
@@ -32,10 +35,16 @@
             @Html.DisplayFor(modelItem => item.managerName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Software)
+            @Html.DisplayFor(modelItem => item.SoftwareName)
         </td>
         <td>
-            @Html.ActionLink("Delete", "Delete", new { id=item.RequestID })
+            @Html.DisplayFor(modelItem => item.softwareType)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.RequestID })
+        </td>
+        <td>
+            @Html.ActionLink("Update", "Update", new { id = item.RequestID })
         </td>
     </tr>
 }
