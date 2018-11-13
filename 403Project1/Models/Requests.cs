@@ -10,8 +10,7 @@ namespace _403Project1.Models
     {
         [Key]
         public int RequestID { get; set; }
-
-        
+     
         [Required(ErrorMessage ="Please enter your name")]
         [Display(Name ="Full Name")]
         public string userName { get; set; }
@@ -23,6 +22,5 @@ namespace _403Project1.Models
         [Required(ErrorMessage = "Please enter the software you'd like to request")]
         [Display(Name = "Software Requested")]
         public string SoftwareName { get; set; }
-
     }
 }
