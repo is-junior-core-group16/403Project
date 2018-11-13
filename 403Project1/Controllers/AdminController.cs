@@ -15,18 +15,20 @@ namespace _403Project1.Controllers
         public static AllRequests edit = new AllRequests();
         public static AllRequests listitem1 = new AllRequests();
 
-
+        [Authorize]
         public ActionResult Index()
 
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult LandingPage()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult Index(AllRequests myRequest)
         {
@@ -36,6 +38,7 @@ namespace _403Project1.Controllers
             return View("Thanks");
         }
 
+        [Authorize]
         public ActionResult DisplayRequests()
         {
             if (!listRequests.Exists(item => item.RequestID == "5A"))
@@ -51,19 +54,21 @@ namespace _403Project1.Controllers
             return View(listRequests);
         }
 
+        [Authorize]
         public ActionResult Delete(string id)
         {
             listRequests.RemoveAll(item => item.RequestID == id);
             return View("DisplayRequests", listRequests);
         }
 
-
+        [Authorize]
         public ActionResult Edit(string id)
         {
             edit = listRequests.Find(item => item.RequestID == id);
             return View("Edit", edit);
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult Edit(AllRequests update)
         {
@@ -74,7 +79,7 @@ namespace _403Project1.Controllers
 
 
         //show the black list (hard coded, add to database for later)
-
+        [Authorize]
         public ActionResult ShowBlackList()
         {
             return View();
@@ -82,6 +87,7 @@ namespace _403Project1.Controllers
 
 
         //show the white list (hard coded, add to database for later)
+        [Authorize]
         public ActionResult ShowWhiteList()
         {
             return View();
