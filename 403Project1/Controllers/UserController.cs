@@ -12,6 +12,8 @@ namespace _403Project1.Controllers
         public static List<Requests> requests = new List<Requests>();
         public static List<String> Whitelist = new List<String>();
         public static List<String> Blacklist = new List<String>();
+        public static int assignid = 0;
+        public static Requests edit = new Requests();
 
         // GET: User
         [Authorize]
@@ -33,8 +35,28 @@ namespace _403Project1.Controllers
             return View("SoftwareInput");
         }
 
-
+        [Authorize]
+        public ActionResult Delete(int id)
+        {
+            requests.RemoveAll(item => item.RequestID == id);
+            return View("ShowList", requests);
+        }
        
+        [Authorize]
+        public ActionResult Update(int id)
+        {
+            edit = requests.Find(item => item.RequestID == id);
+            return View(edit);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Requests update)
+        {
+            requests.RemoveAll(item => item.RequestID == update.RequestID);
+            requests.Add(update);
+            return View("ShowList", requests);
+        }
+
 
         [HttpPost]
         public ActionResult Submit(Requests request)
@@ -42,6 +64,8 @@ namespace _403Project1.Controllers
             
             if (request.SoftwareName == "Other")
                 {
+                request.RequestID = assignid;
+                assignid++;
                 requests.Add(request);
                 return View("SoftwareInput");
                 }
@@ -51,11 +75,15 @@ namespace _403Project1.Controllers
                 request.managerName = requests[requests.Count - 1].managerName;
                 request.softwareType = requests[requests.Count - 1].softwareType;
                 requests.RemoveAt(requests.Count - 1);
+                request.RequestID = assignid;
+                assignid++;
                 requests.Add(request);
                 }
             else
                 {
-                    requests.Add(request);
+                request.RequestID = assignid;
+                assignid++;
+                requests.Add(request);
                 }
 
             if(ModelState.IsValid || (requests[requests.Count - 1].managerName != null && requests[requests.Count - 1].userName != null && requests[requests.Count - 1].SoftwareName != null))
@@ -99,9 +127,10 @@ namespace _403Project1.Controllers
             
             
         }
+       
         //Write a delete function,
         //and try to figure out why the SoftwareInput page always says options..
 
-       
+
     }
 }
